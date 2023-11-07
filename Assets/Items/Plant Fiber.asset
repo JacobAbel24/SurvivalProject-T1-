@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149507ca19753e941959e5c71a04fa33, type: 3}
   m_Name: Plant Fiber
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Plant Fiber
   icon: {fileID: 0}
   description: 
+  prefab: {fileID: 0}
