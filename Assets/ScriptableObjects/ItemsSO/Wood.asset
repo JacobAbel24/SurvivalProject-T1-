@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149507ca19753e941959e5c71a04fa33, type: 3}
-  m_Name: Brick
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  itemName: Brick
+  itemName: Wood
   icon: {fileID: 0}
-  description: 
-  prefab: {fileID: 0}
+  description: The primary material obtained from trees, wood is a versatile resource
+    used in crafting a wide array of items. It serves as the basis for tools, weapons,
+    and building materials, making it an essential component for survival and advancement.

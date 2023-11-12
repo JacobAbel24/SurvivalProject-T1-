@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149507ca19753e941959e5c71a04fa33, type: 3}
-  m_Name: Plant Fiber
+  m_Name: Berries
   m_EditorClassIdentifier: 
-  itemName: Plant Fiber
+  itemName: Berries
   icon: {fileID: 0}
-  description: 
-  prefab: {fileID: 0}
+  description: Juicy and colorful wild berries found in the forest. They can be consumed
+    for a quick energy boost or used in crafting recipes to create potions or dyes.

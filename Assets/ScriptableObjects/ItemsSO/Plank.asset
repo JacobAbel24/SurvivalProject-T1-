@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Wood Plank
   icon: {fileID: 0}
-  description: 
-  prefab: {fileID: 0}
+  description: Smooth and flat wooden planks cut from logs. These planks serve as
+    a versatile building material, essential for constructing various structures
+    and crafting furniture or tools.

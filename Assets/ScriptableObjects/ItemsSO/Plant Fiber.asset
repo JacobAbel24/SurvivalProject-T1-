@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149507ca19753e941959e5c71a04fa33, type: 3}
-  m_Name: Berries
+  m_Name: Plant Fiber
   m_EditorClassIdentifier: 
-  itemName: Berries
+  itemName: Plant Fiber
   icon: {fileID: 0}
-  description: 
-  prefab: {fileID: 0}
+  description: Thin and resilient fibers extracted from plants. Used in crafting
+    to create essential items like ropes, fabrics, or even paper. Plant fiber is
+    a fundamental resource for survival in the wilderness.

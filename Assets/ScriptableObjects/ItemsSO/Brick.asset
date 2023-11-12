@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 149507ca19753e941959e5c71a04fa33, type: 3}
-  m_Name: Wood
+  m_Name: Brick
   m_EditorClassIdentifier: 
-  itemName: Wood
+  itemName: Brick
   icon: {fileID: 0}
-  description: 
-  prefab: {fileID: 0}
+  description: Solid and durable bricks made from fired clay. Often used in construction
+    projects to build sturdy structures. In crafting, bricks can be combined with
+    other materials to create advanced building components.
