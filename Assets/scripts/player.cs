@@ -22,7 +22,7 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        
         var obj = other.GetComponent<Items>();
         if (obj)
         {
