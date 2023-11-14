@@ -26,8 +26,11 @@ public class player : MonoBehaviour
         var obj = other.GetComponent<Items>();
         if (obj)
         {
-            inventory.AddItem(obj.itemObj, 1);
-            Destroy(other.gameObject);
+            if (inventory.AddItem(obj.itemObj, 1))
+            {
+                Destroy(other.gameObject);
+            }
+
         }
     }
 
@@ -61,6 +64,6 @@ public class player : MonoBehaviour
     private void OnApplicationQuit()
     {
         Debug.Log("Inventory Reset!");
-            
+        
     }    
 }

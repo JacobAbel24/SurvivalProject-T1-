@@ -8,23 +8,26 @@ public class InventorySO : ScriptableObject
     public List<inventorySlot> container = new List<inventorySlot>();
     private int maxSlots = 6;
 
-    public void AddItem(itemSO _item, int _amount)
+    public bool AddItem(itemSO _item, int _amount)
     {
- 
-        bool hasItem = false;
-        for(int i = 0; i < container.Count; i++)
+
+        for (int i = 0; i < container.Count; i++)
         {
-            if (container[i].item == _item) 
+            if (container[i].item == _item)
             {
                 container[i].addAmount(_amount);
-                hasItem = true;
-                break;
+                return true;
             }
         }
-        if (!hasItem)
+           
+
+        if (container.Count < maxSlots)
         {
             container.Add(new inventorySlot(_item, _amount));
+            return true;
         }
+
+        return false;
     }
 
 }
