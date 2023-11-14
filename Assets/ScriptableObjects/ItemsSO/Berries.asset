@@ -16,3 +16,4 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: Juicy and colorful wild berries found in the forest. They can be consumed
     for a quick energy boost or used in crafting recipes to create potions or dyes.
+  consumable: 1

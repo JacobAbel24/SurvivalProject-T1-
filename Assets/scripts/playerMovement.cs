@@ -10,7 +10,7 @@ public class playerMovement : MonoBehaviour
 
     PlayerInputs input;
     Vector2 currentMovement;
-    bool runPressed;
+    bool runPressed = false;
 
     private void Awake()
     {

@@ -20,7 +20,7 @@
                     "name": "Keyboard",
                     "id": "f89e5575-2d0e-42e6-a16d-ee85b3e4cc42",
                     "path": "2DVector",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
