@@ -8,7 +8,7 @@ public class player : MonoBehaviour
 
     public InventorySO inventory;
 
-    public float maxHealth = 200, hungerMeter = 100, thirstMeter = 100, initialHungerState = 100, initialThirstState = 100, healthReducer = 1f;
+    public float maxHealth = 200, initialHungerState = 100, initialThirstState = 100, healthReducer = 1f;
     public float health, hunger, thirst, hungerIncreaseAmount = 2f, thirstIncreaseAmount = 3f;
     public bool isConsuming = false, isDead = false;
    
@@ -37,9 +37,11 @@ public class player : MonoBehaviour
         {
             hunger -= hungerIncreaseAmount * Time.deltaTime;
             thirst -= thirstIncreaseAmount * Time.deltaTime;
-            if(hunger < hungerMeter || thirst < thirstMeter)
+            if(hunger <= 0 || thirst <= 0)
             {
                 health -= healthReducer * Time.deltaTime;
+                hunger = 0;
+                thirst = 0;
             }
         }
         if(health <= 0)
@@ -56,5 +58,9 @@ public class player : MonoBehaviour
         EditorApplication.isPlaying = false;
     }
 
-
+    private void OnApplicationQuit()
+    {
+        Debug.Log("Inventory Reset!");
+            
+    }    
 }

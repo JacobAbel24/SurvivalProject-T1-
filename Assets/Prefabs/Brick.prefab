@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4996369379751335029}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.98, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObj: {fileID: 11400000, guid: 61956c5598fea18499bc4cc0745db6d6, type: 2}
+  decreaseHungerBy: 10
+  decreaseThirstBy: 20

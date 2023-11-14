@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class inventoryEditor : EditorWindow
 {
-    [MenuItem("Window/InventoryEditor")]
+    [MenuItem("Window/Inventory Editor")]
     public static void showWindow()
     {
         GetWindow<inventoryEditor>();

@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemObj: {fileID: 11400000, guid: cd313d3255de68442a6b611f96ed1b56, type: 2}
+  decreaseHungerBy: 10
+  decreaseThirstBy: 20

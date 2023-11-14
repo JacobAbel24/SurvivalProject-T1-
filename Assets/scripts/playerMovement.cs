@@ -20,6 +20,11 @@ public class playerMovement : MonoBehaviour
             currentMovement = ctx.ReadValue<Vector2>();
             runPressed = currentMovement.x != 0 || currentMovement.y != 0;
         };
+          input.characterMovement.Movement.canceled += ctx =>
+        {
+            currentMovement = ctx.ReadValue<Vector2>();
+            runPressed = currentMovement.x != 0 || currentMovement.y != 0;
+        };
     }
     private void Start()
     {
@@ -29,6 +34,7 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(runPressed);
         moveCharacter();
         handleRotation();
     }
@@ -42,16 +48,18 @@ public class playerMovement : MonoBehaviour
 
     void moveCharacter()
     {
-        bool isRunning = anim.GetBool(isRunningHash);
+       /* bool isRunning = anim.GetBool(isRunningHash);
         if(runPressed && !isRunning)
         {
             anim.SetBool(isRunningHash, true);
-        }
-        if(!runPressed && isRunning)
 
+        }
+        else if(!runPressed && isRunning )
         {
             anim.SetBool(isRunningHash, false);
-        }
+        }*/
+        anim.SetBool(isRunningHash, runPressed);
+
     }
     private void OnEnable()
     {

@@ -6,9 +6,11 @@ using UnityEngine;
 public class InventorySO : ScriptableObject
 {
     public List<inventorySlot> container = new List<inventorySlot>();
+    private int maxSlots = 6;
 
     public void AddItem(itemSO _item, int _amount)
     {
+ 
         bool hasItem = false;
         for(int i = 0; i < container.Count; i++)
         {
@@ -43,14 +45,8 @@ public class inventorySlot
     }
 }
 /*
-Created empty undefined inventory (will be defined later, remve list and make it using arrays, 10 slots)
-create item templates
-define a few items and craftables
-when the character interacts with an item, it DESTROYS the instance of that item from the gamescene and adds that item type in the inventory.
-addItem function
+Created empty undefined inventory (will be defined later, remve list and make it using arrays, 10 slots or restrict the list to 10 max)
 when the inventory fills up, dont add any more items (show message)
 make a basic Inventory UI (later) update accordingly with the script
-
-
 removeItem function, delete the item from the inventory
 */

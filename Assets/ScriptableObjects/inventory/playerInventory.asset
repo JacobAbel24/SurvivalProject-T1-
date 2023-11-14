@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: playerInventory
   m_EditorClassIdentifier: 
   container: []
+  maxSlots: 10
