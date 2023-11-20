@@ -41,7 +41,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Keyboard"",
                     ""id"": ""f89e5575-2d0e-42e6-a16d-ee85b3e4cc42"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",

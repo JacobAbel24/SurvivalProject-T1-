@@ -6,7 +6,8 @@ using UnityEngine;
 public class InventorySO : ScriptableObject
 {
     public List<inventorySlot> container = new List<inventorySlot>();
-    private int maxSlots = 6;
+    [SerializeField]
+    private int maxSlots = 10;
 
     public bool AddItem(itemSO _item, int _amount)
     {

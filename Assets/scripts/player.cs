@@ -1,37 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class player : MonoBehaviour
 {
 
     public InventorySO inventory;
+    public PlayerControls playerControls;
 
     public float maxHealth = 200, initialHungerState = 100, initialThirstState = 100, healthReducer = 1f;
     public float health, hunger, thirst, hungerIncreaseAmount = 2f, thirstIncreaseAmount = 3f;
-    public bool isConsuming = false, isDead = false;
-   
-    
+    public bool isConsuming = false, isDead = false, interact = false;
+
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+        playerControls.playerMovementMap.Interact.performed += ctx => interact = true;
+        playerControls.playerMovementMap.Interact.canceled += ctx => interact = false;
+    }
+
+
     void Start()
     {
         health = maxHealth;
         hunger = initialHungerState;
         thirst = initialThirstState;
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        
-        var obj = other.GetComponent<Items>();
-        if (obj)
+        Debug.Log("Press E");
+        if (interact)
         {
-            if (inventory.AddItem(obj.itemObj, 1))
+            var obj = other.GetComponent<Items>();
+            if (obj)
             {
-                Destroy(other.gameObject);
+                if (inventory.AddItem(obj.itemObj, 1))
+                {
+                    Destroy(other.gameObject);
+                }
             }
-
         }
+
+    }
+
 
     void Update()
     {
@@ -62,7 +77,16 @@ public class player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Debug.Log("Inventory Reset!");
-        
-    }    
+        inventory.container.Clear();
+    }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 }

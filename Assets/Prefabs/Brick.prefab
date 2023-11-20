@@ -104,7 +104,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-4945232822890943659
 MonoBehaviour:
@@ -121,3 +121,4 @@ MonoBehaviour:
   itemObj: {fileID: 11400000, guid: 61956c5598fea18499bc4cc0745db6d6, type: 2}
   decreaseHungerBy: 10
   decreaseThirstBy: 20
+  increaseHealthBy: 7
