@@ -48,8 +48,6 @@ public class inventorySlot
     }
 }
 /*
-Created empty undefined inventory (will be defined later, remve list and make it using arrays, 10 slots or restrict the list to 10 max)
-when the inventory fills up, dont add any more items (show message)
 make a basic Inventory UI (later) update accordingly with the script
 removeItem function, delete the item from the inventory
 */

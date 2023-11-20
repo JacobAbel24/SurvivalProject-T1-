@@ -32,7 +32,6 @@ public class player : MonoBehaviour
             }
 
         }
-    }
 
     void Update()
     {
