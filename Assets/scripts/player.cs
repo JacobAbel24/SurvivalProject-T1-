@@ -19,7 +19,6 @@ public class player : MonoBehaviour
     {
         playerControls = new PlayerControls();
         playerControls.playerMovementMap.Interact.performed += ctx => interact = true;
-        playerControls.playerMovementMap.Interact.canceled += ctx => interact = false;
     }
 
 
