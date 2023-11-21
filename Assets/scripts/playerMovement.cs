@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
 {
     Animator anim;
     CharacterController characterController;
+    player player;
     int isRunningHash;
     [SerializeField]
     int runSpeed = 3;
@@ -41,8 +42,8 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        MoveCharacter();
-        HandleRotation();
+            MoveCharacter();
+            HandleRotation();
     }
 
 

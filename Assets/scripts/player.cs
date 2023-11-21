@@ -7,45 +7,69 @@ using UnityEngine.InputSystem;
 
 public class player : MonoBehaviour
 {
-
     public InventorySO inventory;
     public PlayerControls playerControls;
+    public Animator anim;
 
     public float maxHealth = 200, initialHungerState = 100, initialThirstState = 100, healthReducer = 1f;
     public float health, hunger, thirst, hungerIncreaseAmount = 2f, thirstIncreaseAmount = 3f;
-    public bool isConsuming = false, isDead = false, interact = false;
+    public bool isConsuming = false, isDead = false, interact = false, hasPicked = false;
+
+    public float decreaseHungerBy = 10f;
+    public float decreaseThirstBy = 20f;
+    public float increaseHealthBy = 7f;
+    int isPickingHash;
 
     private void Awake()
     {
         playerControls = new PlayerControls();
         playerControls.playerMovementMap.Interact.performed += ctx => interact = true;
+        playerControls.playerMovementMap.Interact.canceled += ctx => interact = false;
     }
 
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+        //isPickingHash = Animator.StringToHash("isPicking");
+
         health = maxHealth;
         hunger = initialHungerState;
         thirst = initialThirstState;
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log("Press E");
+
         if (interact)
         {
+
             var obj = other.GetComponent<Items>();
             if (obj)
             {
+                hasPicked = true;
+                anim.SetTrigger("pick");
                 if (inventory.AddItem(obj.itemObj, 1))
                 {
-                    Destroy(other.gameObject);
+                    StartCoroutine(Delay(other));     
+                }
+
+                if (obj.itemObj.consumable)
+                {
+                    health += increaseHealthBy;
+                    hunger += decreaseHungerBy;
+                    thirst += decreaseThirstBy;
                 }
             }
         }
-
     }
 
+    private IEnumerator Delay(Collider other)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(other.gameObject);
+    }
 
     void Update()
     {
@@ -59,6 +83,18 @@ public class player : MonoBehaviour
                 hunger = 0;
                 thirst = 0;
             }
+            if (health > maxHealth)
+            {
+                health = 100;
+            }
+            if(hunger > initialHungerState)
+            {
+                hunger = initialHungerState;
+            }
+            if(thirst > initialThirstState)
+            {
+                thirst = initialThirstState;
+            }
         }
         if(health <= 0)
         {
@@ -71,7 +107,7 @@ public class player : MonoBehaviour
     {
         isDead = true;
         Debug.Log("You have died!!");
-        EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
     }
 
     private void OnApplicationQuit()
