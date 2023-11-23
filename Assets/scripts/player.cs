@@ -10,6 +10,7 @@ public class player : MonoBehaviour
     public InventorySO inventory;
     public PlayerControls playerControls;
     public Animator anim;
+    public HealthSystemUI healthBar;
 
     public float maxHealth = 200, initialHungerState = 100, initialThirstState = 100, healthReducer = 1f;
     public float health, hunger, thirst, hungerIncreaseAmount = 2f, thirstIncreaseAmount = 3f;
@@ -36,6 +37,10 @@ public class player : MonoBehaviour
         health = maxHealth;
         hunger = initialHungerState;
         thirst = initialThirstState;
+
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHunger(hunger);
+        healthBar.SetMaxThirst(thirst);
     }
     
     private void OnTriggerStay(Collider other)
@@ -49,10 +54,10 @@ public class player : MonoBehaviour
             if (obj)
             {
                 hasPicked = true;
-                anim.SetTrigger("pick");
+                //anim.SetTrigger("pick");
                 if (inventory.AddItem(obj.itemObj, 1))
                 {
-                    StartCoroutine(Delay(other));     
+                    Destroy(other.gameObject);
                 }
 
                 if (obj.itemObj.consumable)
@@ -62,19 +67,17 @@ public class player : MonoBehaviour
                     thirst += decreaseThirstBy;
                 }
             }
+            hasPicked = false;
         }
-    }
-
-    private IEnumerator Delay(Collider other)
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(other.gameObject);
     }
 
     void Update()
     {
         if(!isConsuming && !isDead)
         {
+            healthBar.SetHealth(health);
+            healthBar.SetHunger(hunger);
+            healthBar.SetThirst(thirst);
             hunger -= hungerIncreaseAmount * Time.deltaTime;
             thirst -= thirstIncreaseAmount * Time.deltaTime;
             if(hunger <= 0 || thirst <= 0)
