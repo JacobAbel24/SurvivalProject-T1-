@@ -7,7 +7,6 @@ public class playerMovement : MonoBehaviour
 {
     Animator anim;
     CharacterController characterController;
-    player player;
     int isRunningHash;
     [SerializeField]
     int runSpeed = 3;
@@ -15,6 +14,7 @@ public class playerMovement : MonoBehaviour
     PlayerControls input;
     Vector2 currentMovement;
     Vector3 movement;
+    Quaternion targetRotation;
     bool runPressed = false;
     public float rotateValue;
 
@@ -60,10 +60,16 @@ public class playerMovement : MonoBehaviour
         Quaternion rotation = transform.rotation;
         if (runPressed)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(posToLook);
+            targetRotation = Quaternion.LookRotation(posToLook);
             transform.rotation = Quaternion.Slerp(rotation,targetRotation,rotateValue * Time.deltaTime);
         }
 
+    }
+
+    public void MovementStopped()
+    {
+        runSpeed = 0;
+        rotateValue = 0;
     }
 
 

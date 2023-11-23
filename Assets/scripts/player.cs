@@ -110,7 +110,9 @@ public class player : MonoBehaviour
     {
         isDead = true;
         Debug.Log("You have died!!");
+        anim.SetTrigger("dead");
         //EditorApplication.isPlaying = false;
+        GetComponent<playerMovement>().MovementStopped();
     }
 
     private void OnApplicationQuit()
