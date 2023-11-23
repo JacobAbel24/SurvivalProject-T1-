@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Stone
   icon: {fileID: 0}
+  prefab: {fileID: 8332407275765538202, guid: 536e4158f4444e14c882f1c532c2cbed, type: 3}
   description: Solid and naturally occurring stones sourced from the environment.
     Stones have a variety of uses, from crafting basic tools to constructing durable
     structures. They are a foundational resource for early survival.
+  consumable: 0

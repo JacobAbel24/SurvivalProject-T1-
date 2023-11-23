@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    private bool isPaused = false;
+    //private bool isPaused = false;
     private Canvas inventoryUI;
+    public List<InventorySO> inventory;
+
 
 
     private void Start()
@@ -28,11 +30,12 @@ public class InventoryUI : MonoBehaviour
     void InventoryUIToggle()
     {
 
-        // Toggle the pause state
-        isPaused = !isPaused;
+        //isPaused = !isPaused;
         inventoryUI.enabled = !inventoryUI.enabled;
 
-        // Set the time scale accordingly
-        Time.timeScale = isPaused ? 0 : 1;
+        //Time.timeScale = isPaused ? 0 : 1;
     }
+
+
+    
 }

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Plant Fiber
   icon: {fileID: 0}
+  prefab: {fileID: 8634799929329077310, guid: 6bb1d72a2caac91418fb5e38c0f70283, type: 3}
   description: Thin and resilient fibers extracted from plants. Used in crafting
     to create essential items like ropes, fabrics, or even paper. Plant fiber is
     a fundamental resource for survival in the wilderness.
+  consumable: 0

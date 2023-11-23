@@ -7,6 +7,7 @@ public class itemSO : ScriptableObject
 {
     public string itemName;
     public Sprite icon;
+    public GameObject prefab;
     [TextArea(5, 5)]
     public string description;
     public bool consumable = false;
