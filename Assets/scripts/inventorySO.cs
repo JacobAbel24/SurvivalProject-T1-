@@ -1,15 +1,17 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Inventory")]
 public class InventorySO : ScriptableObject
 {
-
     public List<inventorySlot> container = new List<inventorySlot>();
     [SerializeField]
     public int maxSlots = 10;
+
 
 
     public bool AddItem(itemSO _item, int _amount)
@@ -27,11 +29,13 @@ public class InventorySO : ScriptableObject
         if (container.Count < maxSlots)
         {
             container.Add(new inventorySlot(_item, _amount));
+            
             return true;
         }
 
         return false;
     }
+
 
 }
 

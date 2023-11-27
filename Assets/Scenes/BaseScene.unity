@@ -3287,6 +3287,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2931015050104053696, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5787665333962625534, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1

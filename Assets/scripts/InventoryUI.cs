@@ -4,6 +4,7 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -18,9 +19,8 @@ public class InventoryUI : MonoBehaviour
     {
         //inventoryUI = GetComponent<Canvas>();
         inventoryUI.enabled = false;
+        slots = slotHolder.GetComponentsInChildren<InventorySlotUI>();
 
-        slots = inventoryUI.GetComponentsInChildren<InventorySlotUI>();
-        
     }
 
 
@@ -30,6 +30,7 @@ public class InventoryUI : MonoBehaviour
         {
             InventoryUIToggle();
         }
+
     }
 
     void InventoryUIToggle()
@@ -42,7 +43,7 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateInventoryUI()
     {
-
+        
         for(int i = 0; i < slots.Length; i++) 
         {
             if (i < inventory.container.Count)
