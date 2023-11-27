@@ -1463,12 +1463,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1058323295}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1528,6 +1528,10 @@ PrefabInstance:
     - target: {fileID: 1830859425062627962, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Name
       value: InventorySlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5212714303046803965, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425061288855974058, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Pivot.x
@@ -2743,7 +2747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -160}
+  m_AnchoredPosition: {x: 75, y: -135}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929280595
@@ -2766,8 +2770,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 15, y: 15}
+  m_CellSize: {x: 120, y: 120}
+  m_Spacing: {x: 5, y: 5}
   m_Constraint: 2
   m_ConstraintCount: 2
 --- !u!1001 &947294546
@@ -3104,7 +3108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eeaaba047adfa749b33be40a5eb80c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 4837bd7ce7d8b814493e05d27a00ee8d, type: 2}
+  inventoryUI: {fileID: 1058323299}
+  slotHolder: {fileID: 929280594}
 --- !u!223 &1058323299
 Canvas:
   m_ObjectHideFlags: 0
@@ -3163,8 +3168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -40.01, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -40.01001, y: 0}
+  m_SizeDelta: {x: 301, y: 300}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1088619395
 MonoBehaviour:
@@ -3277,6 +3282,14 @@ PrefabInstance:
     - target: {fileID: 1830859425062627962, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Name
       value: InventorySlot (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830859425062627962, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787665333962625534, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425061288855974058, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Pivot.x
@@ -3974,9 +3987,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'description
-
-    asdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  m_text: description
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 9ad269c99dcf42b7aedefd83dd5a7b9d, type: 2}
@@ -5712,6 +5723,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1830859425062627962, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118334195630794783, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7425061288855974058, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6147,18 +6166,6 @@ PrefabInstance:
     - target: {fileID: 1830859425062627962, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Name
       value: InventorySlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1830859425062627962, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365069778826441101, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365069778826441101, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425061288855974058, guid: 3ccfee4a187cdf44787ad61cd43239fd, type: 3}
       propertyPath: m_Pivot.x

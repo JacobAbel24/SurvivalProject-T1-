@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rope
   m_EditorClassIdentifier: 
   itemName: Rope
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6315742ca9354434c9980321fca134a5, type: 3}
   prefab: {fileID: 4542246562862043003, guid: 8a7ae97439e87404691355ad9332ec12, type: 3}
   description: A sturdy and flexible cord made by twisting or braiding plant fibers
     together. Rope is a crucial resource in crafting, employed for constructing tools,

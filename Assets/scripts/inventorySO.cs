@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Inventory")]
 public class InventorySO : ScriptableObject
 {
+
     public List<inventorySlot> container = new List<inventorySlot>();
     [SerializeField]
-    private int maxSlots = 10;
+    public int maxSlots = 10;
+
 
     public bool AddItem(itemSO _item, int _amount)
     {
-
         for (int i = 0; i < container.Count; i++)
         {
             if (container[i].item == _item)

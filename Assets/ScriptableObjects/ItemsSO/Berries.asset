@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Berries
   m_EditorClassIdentifier: 
   itemName: Berries
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 089f0cafd05d62145a566de392126578, type: 3}
   prefab: {fileID: 4713552028661268462, guid: 3e016014dcdb2a04fa28e2118d16d6ee, type: 3}
   description: Juicy and colorful wild berries found in the forest. They can be consumed
     for a quick energy boost or used in crafting recipes to create potions or dyes.

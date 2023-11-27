@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   itemName: Wood
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4c16d8a141ca84f42a749b7f5c79478d, type: 3}
   prefab: {fileID: 3142957606145777339, guid: 37696e01779592d448facd3054c4f8c3, type: 3}
   description: The primary material obtained from trees, wood is a versatile resource
     used in crafting a wide array of items. It serves as the basis for tools, weapons,
