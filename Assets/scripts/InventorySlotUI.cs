@@ -3,22 +3,28 @@ using UnityEngine.UI;
 
 public class InventorySlotUI : MonoBehaviour
 {
-    public Image icon;
-    itemSO item;
-
+    [SerializeField] private Image icon;
+    private itemSO item;
 
     public void AddItemToUI(itemSO _item)
     {
         item = _item;
 
-        icon.sprite = item.icon;
-        icon.enabled = true;
+        if (icon != null)
+        {
+            icon.sprite = item.icon;
+            icon.enabled = true;
+        }
     }
 
     public void ClearItemFromUI()
     {
         item = null;
-        icon.sprite = null;
-        icon.enabled = false;
+
+        if (icon != null)
+        {
+            icon.sprite = null;
+            icon.enabled = false;
+        }
     }
 }

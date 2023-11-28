@@ -11,7 +11,7 @@ public class InventoryUI : MonoBehaviour
     //private bool isPaused = false;
     public Canvas inventoryUI;
     public Transform slotHolder;
-    private InventorySO inventory;
+    public InventorySO inventory;
 
     InventorySlotUI[] slots;
 
@@ -26,7 +26,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             InventoryUIToggle();
         }
@@ -39,12 +39,19 @@ public class InventoryUI : MonoBehaviour
         //isPaused = !isPaused;
         inventoryUI.enabled = !inventoryUI.enabled;
         //Time.timeScale = isPaused ? 0 : 1;
-    } 
+    }
+
+    public bool PickUpItem(Items obj)
+    {
+        bool temp = inventory.AddItem(obj.itemObj, 1);
+        UpdateInventoryUI();
+        return temp;
+    }
 
     public void UpdateInventoryUI()
     {
-        
-        for(int i = 0; i < slots.Length; i++) 
+
+        for (int i = 0; i < slots.Length; i++)
         {
             if (i < inventory.container.Count)
             {

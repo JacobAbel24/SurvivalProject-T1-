@@ -5,9 +5,10 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public InventorySO inventory;
+    public InventoryUI inventoryUI;
     public PlayerControls playerControls;
     public Animator anim;
     public HealthSystemUI healthBar;
@@ -42,7 +43,7 @@ public class player : MonoBehaviour
         healthBar.SetMaxHunger(hunger);
         healthBar.SetMaxThirst(thirst);
     }
-    
+
     private void OnTriggerStay(Collider other)
     {
         Debug.Log("Press E");
@@ -50,12 +51,12 @@ public class player : MonoBehaviour
         if (interact)
         {
 
-            var obj = other.GetComponent<Items>();
+            Items obj = other.GetComponent<Items>();
             if (obj)
             {
                 hasPicked = true;
                 //anim.SetTrigger("pick");
-                if (inventory.AddItem(obj.itemObj, 1))
+                if (inventoryUI.PickUpItem(obj))
                 {
                     Destroy(other.gameObject);
                 }
@@ -73,14 +74,14 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        if(!isConsuming && !isDead)
+        if (!isConsuming && !isDead)
         {
             healthBar.SetHealth(health);
             healthBar.SetHunger(hunger);
             healthBar.SetThirst(thirst);
             hunger -= hungerIncreaseAmount * Time.deltaTime;
             thirst -= thirstIncreaseAmount * Time.deltaTime;
-            if(hunger <= 0 || thirst <= 0)
+            if (hunger <= 0 || thirst <= 0)
             {
                 health -= healthReducer * Time.deltaTime;
                 hunger = 0;
@@ -90,16 +91,16 @@ public class player : MonoBehaviour
             {
                 health = 100;
             }
-            if(hunger > initialHungerState)
+            if (hunger > initialHungerState)
             {
                 hunger = initialHungerState;
             }
-            if(thirst > initialThirstState)
+            if (thirst > initialThirstState)
             {
                 thirst = initialThirstState;
             }
         }
-        if(health <= 0)
+        if (health <= 0)
         {
             died();
         }

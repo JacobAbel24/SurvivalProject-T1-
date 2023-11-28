@@ -12,8 +12,12 @@ public class InventorySO : ScriptableObject
     [SerializeField]
     public int maxSlots = 10;
 
-
-
+    /// <summary>
+    /// I can write description
+    /// </summary>
+    /// <param name="_item">fvyirfgudihgeriugheigergrweih</param>
+    /// <param name="_amount"></param>
+    /// <returns></returns>
     public bool AddItem(itemSO _item, int _amount)
     {
         for (int i = 0; i < container.Count; i++)
