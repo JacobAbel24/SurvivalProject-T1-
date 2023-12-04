@@ -8,16 +8,20 @@ using static UnityEditor.Progress;
 
 public class InventoryUI : MonoBehaviour
 {
-    //private bool isPaused = false;
     public Canvas inventoryUI;
     public Transform slotHolder;
     public InventorySO inventory;
+    public PlayerControls playerControls;
 
     InventorySlotUI[] slots;
 
+    private void Awake()
+    {
+        playerControls = new PlayerControls();
+    }
+
     private void Start()
     {
-        //inventoryUI = GetComponent<Canvas>();
         inventoryUI.enabled = false;
         slots = slotHolder.GetComponentsInChildren<InventorySlotUI>();
 
@@ -26,21 +30,22 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (playerControls.playerMovementMap.InventoryToggle.triggered)
         {
             InventoryUIToggle();
         }
 
     }
 
+    /// <summary>
+    /// Toggles Inventory UI visibility On and Off.
+    /// </summary>
     void InventoryUIToggle()
     {
-
-        //isPaused = !isPaused;
         inventoryUI.enabled = !inventoryUI.enabled;
-        //Time.timeScale = isPaused ? 0 : 1;
     }
 
+    
     public bool PickUpItem(Items obj)
     {
         bool temp = inventory.AddItem(obj.itemObj, 1);
@@ -55,7 +60,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < inventory.container.Count)
             {
-                slots[i].AddItemToUI(inventory.container[i].item);
+                slots[i].AddItemToUI(inventory.container[i].item, inventory.container[i].amount);
             }
             else
             {
@@ -63,4 +68,15 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
 }

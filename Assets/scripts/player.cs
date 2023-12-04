@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Press E");
 
         if (interact)
         {

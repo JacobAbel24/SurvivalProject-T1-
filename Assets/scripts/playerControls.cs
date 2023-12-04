@@ -39,16 +39,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""7a1cfb33-5fd2-4c7d-a251-697b910fe53e"",
+                    ""id"": ""60264139-0de7-449d-a15c-7a4d02f6246a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inventory"",
+                    ""name"": ""Inventory Toggle"",
                     ""type"": ""Button"",
-                    ""id"": ""96d65666-f0b4-480c-9577-f82189c67d43"",
+                    ""id"": ""3769244b-aded-4303-9bc1-106663631cf3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -124,7 +124,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fe0aeadc-4bfb-4264-b28a-670002ef4c0c"",
+                    ""id"": ""1c2b2c40-9405-4931-8f9c-c33569995311"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -135,34 +135,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7442aea9-a307-4c4e-b6b9-a084cbcb5792"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64fbd8bb-04cd-4a1f-9518-7f849bdb13a5"",
+                    ""id"": ""15b10919-fab1-4080-bb82-84fc44694a98"",
                     ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fe9f6dee-0a2a-4491-8d02-28c0ed179a54"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Inventory"",
+                    ""action"": ""Inventory Toggle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -175,7 +153,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_playerMovementMap = asset.FindActionMap("playerMovementMap", throwIfNotFound: true);
         m_playerMovementMap_Movement = m_playerMovementMap.FindAction("Movement", throwIfNotFound: true);
         m_playerMovementMap_Interact = m_playerMovementMap.FindAction("Interact", throwIfNotFound: true);
-        m_playerMovementMap_Inventory = m_playerMovementMap.FindAction("Inventory", throwIfNotFound: true);
+        m_playerMovementMap_InventoryToggle = m_playerMovementMap.FindAction("Inventory Toggle", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -239,14 +217,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerMovementMapActions> m_PlayerMovementMapActionsCallbackInterfaces = new List<IPlayerMovementMapActions>();
     private readonly InputAction m_playerMovementMap_Movement;
     private readonly InputAction m_playerMovementMap_Interact;
-    private readonly InputAction m_playerMovementMap_Inventory;
+    private readonly InputAction m_playerMovementMap_InventoryToggle;
     public struct PlayerMovementMapActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerMovementMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_playerMovementMap_Movement;
         public InputAction @Interact => m_Wrapper.m_playerMovementMap_Interact;
-        public InputAction @Inventory => m_Wrapper.m_playerMovementMap_Inventory;
+        public InputAction @InventoryToggle => m_Wrapper.m_playerMovementMap_InventoryToggle;
         public InputActionMap Get() { return m_Wrapper.m_playerMovementMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -262,9 +240,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
+            @InventoryToggle.started += instance.OnInventoryToggle;
+            @InventoryToggle.performed += instance.OnInventoryToggle;
+            @InventoryToggle.canceled += instance.OnInventoryToggle;
         }
 
         private void UnregisterCallbacks(IPlayerMovementMapActions instance)
@@ -275,9 +253,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
+            @InventoryToggle.started -= instance.OnInventoryToggle;
+            @InventoryToggle.performed -= instance.OnInventoryToggle;
+            @InventoryToggle.canceled -= instance.OnInventoryToggle;
         }
 
         public void RemoveCallbacks(IPlayerMovementMapActions instance)
@@ -299,6 +277,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnInventory(InputAction.CallbackContext context);
+        void OnInventoryToggle(InputAction.CallbackContext context);
     }
 }
