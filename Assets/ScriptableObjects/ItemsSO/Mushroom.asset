@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mushroom
   m_EditorClassIdentifier: 
   itemName: Mushroom
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9dbf298e3c3740548a29c3e11201d3bb, type: 3}
   prefab: {fileID: 0}
-  description: 
-  consumable: 0
+  description: Edible food source, also used to make soup.
+  consumable: 1

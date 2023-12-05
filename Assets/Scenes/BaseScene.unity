@@ -782,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5604122de3f849d4b925f4e2dbcacee3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -20.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5604122de3f849d4b925f4e2dbcacee3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1076,6 +1076,7 @@ MonoBehaviour:
   - {fileID: 8634799929329077310, guid: 6bb1d72a2caac91418fb5e38c0f70283, type: 3}
   - {fileID: 8332407275765538202, guid: 536e4158f4444e14c882f1c532c2cbed, type: 3}
   - {fileID: 3142957606145777339, guid: 37696e01779592d448facd3054c4f8c3, type: 3}
+  - {fileID: 4713552028661268462, guid: 60e9816a34abedb41a076c92a655ff38, type: 3}
 --- !u!1 &650226977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1154,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1636,8 +1637,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 10, z: -9}
+  m_LocalRotation: {x: 0.38268346, y: -0.000000015896617, z: 0.0000000065845946, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 10, z: -29.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1753,14 +1754,14 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
-  m_OverrideSorting: 0
+  m_OverrideSorting: 1
   m_OverridePixelPerfect: 1
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1088619393
 GameObject:
@@ -1987,7 +1988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 100}
+  m_AnchoredPosition: {x: -900, y: -450}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184033957
@@ -2424,8 +2425,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251641816}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268346, y: -0.000000015896623, z: 0.0000000065845964, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 10, z: -9}
+  m_LocalRotation: {x: 0.38268346, y: -0.000000015896617, z: 0.0000000065845946, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 10, z: -29.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3195,8 +3196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 4837bd7ce7d8b814493e05d27a00ee8d, type: 2}
   inventoryUI: {fileID: 1058323298}
-  anim: {fileID: 0}
   healthBar: {fileID: 1843930220}
+  inventoryToggleIcon: {fileID: 1184033955}
   maxHealth: 100
   initialHungerState: 100
   initialThirstState: 100

@@ -24,7 +24,6 @@ public class InventoryUI : MonoBehaviour
     {
         inventoryUI.enabled = false;
         slots = slotHolder.GetComponentsInChildren<InventorySlotUI>();
-
     }
 
 

@@ -6,6 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new recipe", menuName = "New Recipe")]
 public class RecipeSO : ScriptableObject
 {
-    public itemSO[] item;
-    public itemSO craftedItem;
+    public ItemSO[] item;
+    public ItemSO craftedItem;
 }

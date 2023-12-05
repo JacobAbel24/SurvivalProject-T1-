@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    public itemSO itemObj;  
+    public ItemSO itemObj;  
 }

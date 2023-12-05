@@ -8,11 +8,11 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Inventory")]
 public class InventorySO : ScriptableObject
 {
-    public List<inventorySlot> container = new List<inventorySlot>();
+    public List<InventorySlot> container = new List<InventorySlot>();
     [SerializeField]
     public int maxSlots = 10;
 
-    public bool AddItem(itemSO _item, int _amount)
+    public bool AddItem(ItemSO _item, int _amount)
     {
         for (int i = 0; i < container.Count; i++)
         {
@@ -26,7 +26,7 @@ public class InventorySO : ScriptableObject
 
         if (container.Count < maxSlots)
         {
-            container.Add(new inventorySlot(_item, _amount));
+            container.Add(new InventorySlot(_item, _amount));
             
             return true;
         }
@@ -38,11 +38,11 @@ public class InventorySO : ScriptableObject
 }
 
 [System.Serializable]
-public class inventorySlot
+public class InventorySlot
 {
-    public itemSO item;
+    public ItemSO item;
     public int amount;
-    public inventorySlot(itemSO _item, int _amount)
+    public InventorySlot(ItemSO _item, int _amount)
     {
         item = _item;
         amount = _amount;

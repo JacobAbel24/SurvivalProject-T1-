@@ -10,8 +10,10 @@ public class Player : MonoBehaviour
     public InventorySO inventory;
     public InventoryUI inventoryUI;
     public PlayerControls playerControls;
-    public Animator anim;
+    private Animator anim;
     public HealthSystemUI healthBar;
+    [SerializeField]
+    private GameObject inventoryToggleIcon;
 
     public float maxHealth = 200, initialHungerState = 100, initialThirstState = 100, healthReducer = 1f;
     public float health, hunger, thirst, hungerIncreaseAmount = 2f, thirstIncreaseAmount = 3f;
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
+        inventoryToggleIcon.SetActive(true);
         if (interact)
         {
 
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour
                 if (inventoryUI.PickUpItem(obj))
                 {
                     Destroy(other.gameObject);
+                    inventoryToggleIcon.SetActive(false);
                 }
 
                 if (obj.itemObj.consumable)
@@ -69,6 +72,11 @@ public class Player : MonoBehaviour
             }
             hasPicked = false;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inventoryToggleIcon.SetActive(false);
     }
 
     void Update()
@@ -111,8 +119,7 @@ public class Player : MonoBehaviour
         isDead = true;
         Debug.Log("You have died!!");
         anim.SetTrigger("dead");
-        //EditorApplication.isPlaying = false;
-        GetComponent<playerMovement>().MovementStopped();
+        GetComponent<PlayerMovement>().MovementStopped();
     }
 
     private void OnApplicationQuit()

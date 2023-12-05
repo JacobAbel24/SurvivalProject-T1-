@@ -6,11 +6,11 @@ public class InventorySlotUI : MonoBehaviour
 {
     [SerializeField] 
     private Image icon;
-    private itemSO item;
+    private ItemSO item;
     [SerializeField] 
     private TMP_Text tmptext;
 
-    public void AddItemToUI(itemSO _item, int _amount)
+    public void AddItemToUI(ItemSO _item, int _amount)
     {
         item = _item;
         tmptext.text = _amount.ToString();
