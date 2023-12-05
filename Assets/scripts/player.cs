@@ -19,9 +19,9 @@ public class Player : MonoBehaviour
     public float health, hunger, thirst, hungerIncreaseAmount = 2f, thirstIncreaseAmount = 3f;
     public bool isConsuming = false, isDead = false, interact = false, hasPicked = false;
 
-    public float decreaseHungerBy = 10f;
-    public float decreaseThirstBy = 20f;
-    public float increaseHealthBy = 7f;
+    private float decreaseHungerBy = 10f;
+    private float decreaseThirstBy = 20f;
+    private float increaseHealthBy = 7f;
     int isPickingHash;
 
     private void Awake()
@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        //isPickingHash = Animator.StringToHash("isPicking");
 
         health = maxHealth;
         hunger = initialHungerState;

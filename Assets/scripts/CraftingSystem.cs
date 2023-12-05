@@ -10,7 +10,6 @@ public class CraftingSystem : MonoBehaviour
     {
         recipe = GetComponent<RecipeSO>();
     }
-
     void Craft()
     {
         

@@ -52,6 +52,3 @@ public class InventorySlot
         amount += value;
     }
 }
-/*
-removeItem function, delete the item from the inventory
-*/
