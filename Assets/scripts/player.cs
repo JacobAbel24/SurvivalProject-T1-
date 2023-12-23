@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -22,7 +17,6 @@ public class Player : MonoBehaviour
     private float decreaseHungerBy = 10f;
     private float decreaseThirstBy = 20f;
     private float increaseHealthBy = 7f;
-    int isPickingHash;
 
     private void Awake()
     {

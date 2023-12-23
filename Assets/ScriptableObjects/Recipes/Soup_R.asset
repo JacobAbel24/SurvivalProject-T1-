@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Soup_R
   m_EditorClassIdentifier: 
   item:
+  - {fileID: 11400000, guid: 14a519541ab49a24f8156427ded0ae7c, type: 2}
   - {fileID: 11400000, guid: 8c0068ef07141804e8af0fde9762278c, type: 2}
-  - {fileID: 11400000, guid: 8c0068ef07141804e8af0fde9762278c, type: 2}
-  - {fileID: 11400000, guid: c7e499b37aae7b346aea2b23a4e87a99, type: 2}
+  - {fileID: 11400000, guid: ed34a70513b1f8740a203cda76277da5, type: 2}
   craftedItem: {fileID: 11400000, guid: 5227401fbf62bcb4b88b273cb2adfe4f, type: 2}

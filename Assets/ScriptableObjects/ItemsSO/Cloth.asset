@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Cloth
   m_EditorClassIdentifier: 
   itemName: Cloth
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 87ade1c7f0ea95b46a28aff7809ce05b, type: 3}
   prefab: {fileID: 0}
-  description: 
   consumable: 0

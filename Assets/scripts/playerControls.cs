@@ -53,6 +53,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crafting Toggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""52f45459-4981-4b95-92fc-dcbeb8cf0829"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -141,6 +150,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Inventory Toggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0408f96-0811-4843-986e-8b8cc8124553"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crafting Toggle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -670,6 +690,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_playerMovementMap_Movement = m_playerMovementMap.FindAction("Movement", throwIfNotFound: true);
         m_playerMovementMap_Interact = m_playerMovementMap.FindAction("Interact", throwIfNotFound: true);
         m_playerMovementMap_InventoryToggle = m_playerMovementMap.FindAction("Inventory Toggle", throwIfNotFound: true);
+        m_playerMovementMap_CraftingToggle = m_playerMovementMap.FindAction("Crafting Toggle", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -746,6 +767,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerMovementMap_Movement;
     private readonly InputAction m_playerMovementMap_Interact;
     private readonly InputAction m_playerMovementMap_InventoryToggle;
+    private readonly InputAction m_playerMovementMap_CraftingToggle;
     public struct PlayerMovementMapActions
     {
         private @PlayerControls m_Wrapper;
@@ -753,6 +775,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_playerMovementMap_Movement;
         public InputAction @Interact => m_Wrapper.m_playerMovementMap_Interact;
         public InputAction @InventoryToggle => m_Wrapper.m_playerMovementMap_InventoryToggle;
+        public InputAction @CraftingToggle => m_Wrapper.m_playerMovementMap_CraftingToggle;
         public InputActionMap Get() { return m_Wrapper.m_playerMovementMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -771,6 +794,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @InventoryToggle.started += instance.OnInventoryToggle;
             @InventoryToggle.performed += instance.OnInventoryToggle;
             @InventoryToggle.canceled += instance.OnInventoryToggle;
+            @CraftingToggle.started += instance.OnCraftingToggle;
+            @CraftingToggle.performed += instance.OnCraftingToggle;
+            @CraftingToggle.canceled += instance.OnCraftingToggle;
         }
 
         private void UnregisterCallbacks(IPlayerMovementMapActions instance)
@@ -784,6 +810,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @InventoryToggle.started -= instance.OnInventoryToggle;
             @InventoryToggle.performed -= instance.OnInventoryToggle;
             @InventoryToggle.canceled -= instance.OnInventoryToggle;
+            @CraftingToggle.started -= instance.OnCraftingToggle;
+            @CraftingToggle.performed -= instance.OnCraftingToggle;
+            @CraftingToggle.canceled -= instance.OnCraftingToggle;
         }
 
         public void RemoveCallbacks(IPlayerMovementMapActions instance)
@@ -924,6 +953,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnInventoryToggle(InputAction.CallbackContext context);
+        void OnCraftingToggle(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

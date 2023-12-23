@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Soup
   m_EditorClassIdentifier: 
   itemName: Soup
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a1a37558e2beec64fa159ee2efa9178e, type: 3}
   prefab: {fileID: 0}
-  description: 
   consumable: 0

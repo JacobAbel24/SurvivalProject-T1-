@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Berry Juice
   m_EditorClassIdentifier: 
   itemName: Berry Juice
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 13e407e28318e804093307a016fe8f9e, type: 3}
   prefab: {fileID: 0}
-  description: 
   consumable: 1

@@ -6,9 +6,11 @@ public class InventorySlotUI : MonoBehaviour
 {
     [SerializeField] 
     private Image icon;
+
     private ItemSO item;
     [SerializeField] 
     private TMP_Text tmptext;
+
 
     public void AddItemToUI(ItemSO _item, int _amount)
     {
@@ -18,6 +20,7 @@ public class InventorySlotUI : MonoBehaviour
         {
             icon.sprite = item.icon;
             icon.enabled = true;
+            icon.raycastTarget = true;
             if(tmptext.text != null && tmptext.text != "1")
             {
                 tmptext.enabled = true;
@@ -33,6 +36,7 @@ public class InventorySlotUI : MonoBehaviour
         {
             icon.sprite = null;
             icon.enabled = false;
+            icon.raycastTarget = false;
             tmptext.enabled = false;
         }
     }

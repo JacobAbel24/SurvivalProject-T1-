@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -12,6 +7,7 @@ public class InventoryUI : MonoBehaviour
     public Transform slotHolder;
     public InventorySO inventory;
     public PlayerControls playerControls;
+    public Canvas craftZoneCanvas;
 
     InventorySlotUI[] slots;
 
@@ -23,6 +19,7 @@ public class InventoryUI : MonoBehaviour
     private void Start()
     {
         inventoryUI.enabled = false;
+        craftZoneCanvas.enabled = false;
         slots = slotHolder.GetComponentsInChildren<InventorySlotUI>();
     }
 
@@ -33,7 +30,10 @@ public class InventoryUI : MonoBehaviour
         {
             InventoryUIToggle();
         }
-
+        if(playerControls.playerMovementMap.CraftingToggle.triggered)
+        {
+            CraftingUIToggle();
+        }
     }
 
     /// <summary>
@@ -42,6 +42,11 @@ public class InventoryUI : MonoBehaviour
     void InventoryUIToggle()
     {
         inventoryUI.enabled = !inventoryUI.enabled;
+    }
+
+    void CraftingUIToggle()
+    {
+            craftZoneCanvas.enabled = !craftZoneCanvas.enabled;
     }
 
     
